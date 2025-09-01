@@ -1,26 +1,19 @@
-import { useState } from "react";
+import React, { useState } from "react";
 
-function App() {
+export default function TodoApp() {
   const [tasks, setTasks] = useState([]);
-  const [filter, setFilter] = useState("all"); // all | active | completed
+  const [filter, setFilter] = useState("All");
   const [input, setInput] = useState("");
 
-  // Добавление задачи
+  // Add new task
   const addTask = (e) => {
     e.preventDefault();
     if (input.trim() === "") return;
-
-    const newTask = {
-      id: Date.now(),
-      text: input,
-      completed: false,
-    };
-
-    setTasks([...tasks, newTask]);
+    setTasks([...tasks, { id: Date.now(), text: input, completed: false }]);
     setInput("");
   };
 
-  // Переключение выполнения задачи
+  // Toggle complete
   const toggleTask = (id) => {
     setTasks(
       tasks.map((task) =>
@@ -29,42 +22,37 @@ function App() {
     );
   };
 
-  // Удаление задачи
-  const deleteTask = (id) => {
-    setTasks(tasks.filter((task) => task.id !== id));
-  };
-
-  // Очистка завершённых
+  // Delete completed tasks
   const clearCompleted = () => {
     setTasks(tasks.filter((task) => !task.completed));
   };
 
-  // Фильтрация
+  // Apply filter
   const filteredTasks = tasks.filter((task) => {
-    if (filter === "active") return !task.completed;
-    if (filter === "completed") return task.completed;
-    return true; // all
+    if (filter === "Active") return !task.completed;
+    if (filter === "Completed") return task.completed;
+    return true;
   });
 
-  // Счётчик активных
+  // Unfinished task counter
   const activeCount = tasks.filter((task) => !task.completed).length;
 
   return (
-    <div className="app">
-      <h1>Todo App</h1>
+    <div className="todo-app" style={{ maxWidth: 400, margin: "auto" }}>
+      <h1>To-Do App</h1>
 
-      {/* Форма добавления */}
+      {/* Add Task */}
       <form onSubmit={addTask}>
         <input
           type="text"
           value={input}
           onChange={(e) => setInput(e.target.value)}
-          placeholder="Enter task..."
+          placeholder="What needs to be done?"
         />
         <button type="submit">Add</button>
       </form>
 
-      {/* Список задач */}
+      {/* Task List */}
       <ul>
         {filteredTasks.map((task) => (
           <li key={task.id}>
@@ -76,25 +64,31 @@ function App() {
             <span style={{ textDecoration: task.completed ? "line-through" : "none" }}>
               {task.text}
             </span>
-            <button onClick={() => deleteTask(task.id)}>❌</button>
           </li>
         ))}
       </ul>
 
-      {/* Нижняя панель */}
-      <div className="footer">
+      {/* Footer */}
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "space-between",
+          marginTop: 10,
+        }}
+      >
+        {/* Unfinished task counter */}
         <span>{activeCount} items left</span>
 
-        <div className="filters">
-          <button onClick={() => setFilter("all")}>All</button>
-          <button onClick={() => setFilter("active")}>Active</button>
-          <button onClick={() => setFilter("completed")}>Completed</button>
+        {/* Filter buttons */}
+        <div>
+          <button onClick={() => setFilter("All")}>All</button>
+          <button onClick={() => setFilter("Active")}>Active</button>
+          <button onClick={() => setFilter("Completed")}>Completed</button>
         </div>
 
+        {/* Clear completed */}
         <button onClick={clearCompleted}>Clear completed</button>
       </div>
     </div>
   );
 }
-
-export default App;
