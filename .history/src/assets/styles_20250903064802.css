@@ -33,13 +33,9 @@ html, body, #root {
 }
 .nav {
   display: flex;
-  gap: 38px;
-  text-decoration: none;
+  gap: 18px;
   align-items: center;
   color: var(--muted);
-}
-a {
-  text-decoration: none;
 }
 .nav a { color: inherit; }
 .nav a:hover { color: var(--green); }
@@ -59,12 +55,11 @@ a {
   font-size: 44px;
   font-weight: 700;
   line-height: 1;
-  text-decoration: underline;
 }
 .hero p {
   font-size: 16px;
   opacity: .9;
-  margin-top:-22px;
+  margin-top: 8px;
 }
 
 /* Content */

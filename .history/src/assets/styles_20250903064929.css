@@ -46,7 +46,7 @@ a {
 
 /* Hero banner */
 .hero {
-  height: 120px;
+  height: 220px;
   background: linear-gradient(180deg, var(--green) 0%, var(--green-dark) 100%);
   color: #fff;
   display: flex;
@@ -59,12 +59,11 @@ a {
   font-size: 44px;
   font-weight: 700;
   line-height: 1;
-  text-decoration: underline;
 }
 .hero p {
   font-size: 16px;
   opacity: .9;
-  margin-top:-22px;
+  margin-top: 8px;
 }
 
 /* Content */

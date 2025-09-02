@@ -38,8 +38,11 @@ export default function SignIn() {
       localStorage.setItem("username", result.user.username);
       localStorage.setItem("avatar", result.user.image);
       localStorage.setItem("token", result.user.token);
-      setUser({ name: result.user.username, avatar: result.user.image, token: result.user.token });
-      navigate("/");
+      setUser({
+        name: result.user.username,
+        avatar: result.user.image,
+      });
+      navigate("/articles");
     } else {
       if (result.errors && result.errors.body) {
         setServerError("Account not found");

@@ -59,12 +59,12 @@ a {
   font-size: 44px;
   font-weight: 700;
   line-height: 1;
-  text-decoration: underline;
+  text-decoration: ;
 }
 .hero p {
   font-size: 16px;
   opacity: .9;
-  margin-top:-22px;
+  margin-top:-20px;
 }
 
 /* Content */

@@ -37,8 +37,11 @@ export default function SignUp() {
     if (res.ok) {
       localStorage.setItem("username", result.user.username);
       localStorage.setItem("token", result.user.token);
-      setUser({ name: result.user.username, avatar: result.user.image, token: result.user.token });
-      navigate("/");
+      setUser({
+        name: result.user.username,
+        avatar: result.user.image,
+      });
+      navigate("/articles");
     } else {
       if (
         result.errors &&
