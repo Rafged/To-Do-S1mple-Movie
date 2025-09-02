@@ -1,0 +1,49 @@
+@font-face {
+  font-family: "Inter UI";
+  src: url("./Font/Inter-UI-Black.otf") format("opentype");
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Inter UI";
+  src: url("./Font/Inter-UI-BlackItalic.otf") format("opentype");
+  font-weight: 900;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Inter UI";
+  src: url("./Font/Inter-UI-Bold.otf") format("opentype");
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Inter UI";
+  src: url("./Font/Inter-UI-BoldItalic.otf") format("opentype");
+  font-weight: bold;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Inter UI";
+  src: url("./Font/Inter-UI-Italic.otf") format("opentype");
+  font-weight: normal;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Inter UI";
+  src: url("./Font/Inter-UI-Medium.otf") format("opentype");
+  font-weight: medium;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Inter UI";
+  src: url("./Font/Inter-UI-MediumItalic.otf") format("opentype");
+  font-weight: medium;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Inter UI";
+  src: url("./Font/Inter-UI-Regular.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
