@@ -44,7 +44,7 @@ export default function MovieCard({ movie, onRate, userRating }) {
         </div>
         <div className="row-between">
           <div className="muted">Your rating:</div>
-          <Rate allowHalf value={(userRating || 0) / 2} onChange={(v) => onRate(v * 2)} />
+          <Rate allowHalf value={(userRating || 0) / 2} onChange={(v) => onRate(Math.round(v * 2) / 2)} />
         </div>
       </div>
     </div>

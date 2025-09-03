@@ -21,7 +21,7 @@ export default function RatedMovies({ guestSessionId }) {
   const onRate = async (movieId, value) => {
     if (!guestSessionId) return
     const v10 = Math.max(0.5, Math.min(10, value * 2))
-    await rateMovie({ movieId, value, guestSessionId })
+    await rateMovie({ movieId, value: v10, guestSessionId })
     // refresh current page
     const data = await fetchRatedMovies({ guestSessionId, page })
     setResults(data.results || [])
